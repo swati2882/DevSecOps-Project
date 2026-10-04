@@ -28,6 +28,7 @@ jobs:
       - name: Security Scan
         run: |
           echo "Running security scan..."
+           grep -R "password\|secret\|api_key" --include="*.java" . || true
           echo "Security scan completed successfully."
 
       - name: Security Testing
